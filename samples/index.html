@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Untitled</title>
+	</head>
+	<body>
+		<select id="base">
+			<option value="GBP">GBP</option>
+			<option value="USD">USD</option>
+			<option value="EUR">EUR</option>
+		</select>
+		->
+		<select id="convert">
+			<option value="GBP">GBP</option>
+			<option value="USD">USD</option>
+			<option value="EUR">EUR</option>
+		</select>
+		<input id="value" type="text" />
+		<h1 id="result"></h1>
+		<script src="../dist/alkemi.min.js"></script>
+		<script>
+
+			var base = document.getElementById("base");
+			var convert = document.getElementById("convert");
+			var input = document.getElementById("value");
+
+
+			input.addEventListener("keyup", function() {
+				Alkemi.rates(base.value, convert.value, function(rate) {
+					document.getElementById("result").textContent = rate.convert(input.value);
+				});
+			});
+
+			base.addEventListener("change", function() {
+				Alkemi.rates(base.value, convert.value, function(rate) {
+					document.getElementById("result").textContent = rate.convert(input.value);
+				});
+			});
+
+			convert.addEventListener("change", function() {
+				Alkemi.rates(base.value, convert.value, function(rate) {
+					document.getElementById("result").textContent = rate.convert(input.value);
+				});
+			});
+
+		</script>
+	</body>
+</html>

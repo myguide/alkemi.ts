@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "out": "dist/alkemi.js",
+        "sourceMap": false
+    },
+    "files": [
+        "src/alkemi_request.ts",
+        "src/alkemi_rate.ts",
+        "src/alkemi.ts"
+    ]
+}
